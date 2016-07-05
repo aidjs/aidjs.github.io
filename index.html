@@ -1,9 +1,210 @@
 <html>
-<head>
-  <title>Aid Js</title>
-</head>
-<body>
-    <h1>Aid Js</h1>
-</body>
+	<head>
+		<title>Aid JS, A Javascript aider!</title>
 
+		<meta name="description" content="Aid JS, A Javascript aider! is a javascript framework/library fror creating incredible javascript single/multi page applications" />
+       	<meta name="keywords" content="Aid JS | Javascript aider | Javascript MVC | Framework | Library | JS application" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" type="text/css" href="assets/boot/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/highlight/styles/monokai-sublime.css">
+		<script src="assets/highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-xs-6"><a href="docs/">  Documentation </a> | <a href="tutorial/user_management/"> Tutorial  </a> </div>
+					<div class="col-sm-6 col-xs-6" style="text-align:right">Lisence | Contact</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="container">
+			
+			<div style="padding-top:12px;" class="row logo">
+				<div class="col-md-12">
+					<div class="logo">
+						<img src="assets/images/aidjs-logo.png" style="height:100px; width:111px;border-radius:12px;border: 5px solid #86F007;">
+					</div>
+					<h1 class="logo">Aid <span style="color:#F6070C">Js</span></h1>
+
+
+				</div>
+			</div>
+			
+			<div style="padding-top:12px;" class="row download">
+									<div class="col-sm-4"><input type="button" class="dwn" value="Download Aid JS : version 1"> </div>
+									<div class="col-sm-4"><input type="button" class="dwn" value="Demo application [Framework]"></div>
+									<div class="col-sm-4"><input type="button" class="dwn" value="Demo application [Library]"></div>
+									<div class="col-md-12"> <hr class="hr"/> </div>
+			</div>
+			
+
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Introduction starts -->
+					<div class="col-md-12" class="intro">
+						
+						<h2>Introduction</h2>
+
+						
+						<p>Aid JS is a javascript framework/library which aids/helps developers make incredible javascript single/multi page applications with high performance. Aid JS apps also ensures code maintainability as well as reusability.</p>
+						
+						<div class="col-md-12">
+							<h4> Why Aid js? </h4>
+							<ul>
+								<li> Easy to learn as this is none other than javascript but just using it in an described way</li>
+								<li> Follows more or less the same MVC flow of server side language like PHP,.net, JAVA.</li>
+								<li> Automatic routing without any extra routing codes which makes development faster </li>
+								<li> Provides easy templating features and gives high performance in generating templates </li>
+								<li> Uses the objected oriented programming concept in the best way one can do in javascript</li>
+								<li> Classes, Mixins and Modules enhances code reusabiliy as well as maintainability</li>
+								<li> No dependencies, its core javascript and so works without/with any js libraries</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-12"><hr class="hr"/></div>
+					<!-- Introduction ends -->
+					<!-- Framlib starts -->
+					<div class="col-md-12" class="framelib">
+							
+						<h2> Framework/Library ? </h2>
+						<p>Well, you can use aid as a framework also you can use it as a library. But using it as a framework will get you more feature than as a library</p>
+						<div class="col-md-12">
+							<h4>Framework</h4>
+							<p>When aid is used as a framework it will act obviously as a MVC framework with the same MVC flow of server side language like PHP,.net, JAVA.</p>
+							<p>Aid has controllers(C) and views(V) explicitly and model(M) implicitly as models are always an ajax call to a server side language </p>
+							<div class="col-md-12">
+								<h5>Main Concepts of Aid - framework</h5>
+								<ul>
+									<li>Routing</li>
+									<li>Controllers</li>
+									<li>Templating/Views</li>
+									<li>Collections</li>
+									<li>Classes</li>
+									<li>Mixins</li>
+									<li>Inheritance</li>
+									<li>Modules</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<h4>Library</h4>
+							<p>Aid can be used as a library mainly if one needs just a javascript templating engine</p>
+						</div>
+					</div>
+					<div class="col-md-12"><hr class="hr"/></div>
+					<!-- Framlib ends -->
+						
+
+					<div class="col-md-12">
+						<h2>A simple Intoduction to Aid Templating</h2>
+
+						<p> This follows with a sample templating of aid in library mode </p>						 
+
+
+						<div class="row">
+							<div class="col-md-6">
+								<h5>index.html</h5>
+
+
+<pre><code>&lt!-- The div where view is to be placed -->
+&lt;div id="view">&lt;/div>
+&lt;!-- Including aid js file -->
+&lt;script type="text/javascript" src="aid.js">
+&lt;script type="text/javascript">
+   // creating the aid library
+   var app = $_.library();
+   // Calling templating function
+   // Params : Template url,Data object,callback function
+   app.makeTemplate( 'templates/home', {
+       title            : 'Aid JS',
+       highlights 	: ['MVC','Templating','oops Concept'], 
+       built_on  	: 'js', 
+       console_msg      : 'Templating concept understood!',
+       one 		: 1,
+       two 		: 2
+   }, function(html) {
+       document.getElementById('view').innerHTML = html;
+   });
+&lt;/script>
+
+</code></pre>
+
+							</div>
+							<div class="col-md-6">
+									<h5>template/home.tpl</h5>
+<pre><code>//To display a variable use {{ }}
+&lt;h3> {{ this.title }} &lt;/h3>
+&lt;p> The highlights are &lt;/p>
+//Javascript codes are embedded inside <% %>
+
+&lt;ul> //For loop example
+    <% for( var i = 0; i &lt; this.highlights.length ; i++) { %>
+	  &lt;li> {{ this.highlights[i] }} &lt;/li> 
+    <% } %>
+&lt;/ul>
+
+<% //If condition example
+    if(this.built_on == 'js') %= 'Aid is built on Javascript';
+    else %= 'Aid is built on some other thing!';
+%>
+
+//Every thing  between  <% %> executes as same as it do in javascript
+<% console.log("one + two = " parseInt(this.one + this.two) ); %>
+<% console.log('ok! '+this.console_msg); %>
+<% console.log(1+1 +" !!!--!!! So evaluation also works"); %>
+
+</code></pre>
+
+							</div>
+
+							<div class="col-md-6">
+								<h5>Browser output</h5>
+								<div class="border_op">
+									<div class="inner_op">
+								       <div id="view"><h3>Aid JS</h3><p> The highlights are </p><ul><!-- //Javascript codes are embedded inside  -->	<li> MVC </li> 	<li> Templating </li> 	<li> oops Concept </li> </ul>Aid is built on Javascript<!-- //Note Every thing executes as same as it do in javascript if u write it between   --><br><br></div>
+								     </div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<h5>Console output</h5>
+								<div class="border_op" >
+									<div class="inner_op" style="min-height: 198px;padding-top:12px;">
+								      	<br> <br>>&nbsp;&nbsp;&nbsp;one + two = 3 
+								      	<br><br>>&nbsp;&nbsp;&nbsp;ok! I understand the aid templating concept 
+								      	<br><br>>&nbsp;&nbsp;&nbsp;2 !!!--!!! So evaluation also works
+								     </div>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			
+
+		</div>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">copyright 2016 &copy <a href="http://www.appsvin.com/S_Vinesh">  S Vinesh  </a>  </div>
+					<div class="col-md-6" style="text-align:right">MIT Lisence</div>
+				</div>
+			</div>
+		</footer>
+
+		<script rel="stylesheet" type="text/css" href="assets/boot/js/bootstrap.js"></script>
+
+	</body>
 </html>
